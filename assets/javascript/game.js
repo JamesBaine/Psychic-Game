@@ -14,7 +14,12 @@ document.onkeyup = function(event) {
  
 	var computerGuess = options[ Math.floor ( Math.random() * options.length)];
 
-	if (options.indexOf(userGuess) === -1 || guessed.indexOf(userGuess) !== -1) {
+	if (options.indexOf(userGuess) === -1) {
+		return false;
+
+	} else if(guessed.indexOf(userGuess) !== -1) {
+
+		alert("You already guess that!")
 		return false;
 
 	} else if (userGuess === computerGuess) {
